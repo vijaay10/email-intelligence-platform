@@ -1,0 +1,28 @@
+# Conda environment for the Email Intelligence Platform.
+#
+#   conda env create -f environment.yml
+#   conda activate email-intelligence
+#
+# Python is pinned to 3.11 because the AI stack (sentence-transformers,
+# chromadb) has the best wheel coverage there. The original ML pipeline works
+# on 3.9+.
+name: email-intelligence
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  # Core ML (original pipeline) — installed via conda for reliable BLAS wheels.
+  - scikit-learn>=1.3.0
+  - numpy>=1.24.0
+  - pandas>=2.0.0
+  - matplotlib>=3.7.0
+  - nltk>=3.8.1
+  # AI stack via pip (newer/leaner than conda channels).
+  - pip:
+      - sentence-transformers>=2.2.2
+      - chromadb>=0.4.22
+      - ollama>=0.1.7
+      - streamlit>=1.30.0
+      - python-dotenv>=1.0.0
