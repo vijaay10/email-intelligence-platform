@@ -9,6 +9,8 @@ risk detection, and ML-prediction explanations — plus **Retrieval-Augmented
 Generation** (Sentence-Transformers + ChromaDB) for semantic search and a
 "Chat with your emails" assistant.
 
+![Demo](docs/demo.gif)
+
 > **Local-only. No cloud APIs.** No OpenAI / Anthropic / Gemini. The LLM runs on
 > your machine through [Ollama](https://ollama.com). Every AI feature degrades
 > gracefully — if Ollama or the AI packages aren't installed, the original ML
